@@ -23,7 +23,6 @@ import (
 	solutionExplorer "github.com/integr8ly/integreatly-operator/pkg/apis/integreatly/tutorial-web-app-operator/pkg/apis/v1alpha1"
 	integreatlyv1alpha1 "github.com/integr8ly/integreatly-operator/pkg/apis/integreatly/v1alpha1"
 	kafkav1 "github.com/integr8ly/integreatly-operator/pkg/apis/kafka.strimzi.io/v1alpha1"
-	monitoring "github.com/integr8ly/integreatly-operator/pkg/apis/monitoring/v1alpha1"
 
 	appsv1 "github.com/openshift/api/apps/v1"
 	imagev1 "github.com/openshift/api/image/v1"
@@ -61,7 +60,6 @@ func init() {
 		enmasseAdmin.SchemeBuilder.AddToScheme,
 		threescalev1.SchemeBuilder.AddToScheme,
 		solutionExplorer.SchemeBuilder.AddToScheme,
-		monitoring.SchemeBuilder.AddToScheme,
 		grafanav1alpha1.SchemeBuilder.AddToScheme,
 		crov1.SchemeBuilder.AddToScheme,
 		apicurito.SchemeBuilder.AddToScheme,

@@ -11,12 +11,12 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"./pkg/apis/monitoring/v1alpha1.ApplicationMonitoring": schema_pkg_apis_monitoring_v1alpha1_ApplicationMonitoring(ref),
-		"./pkg/apis/monitoring/v1alpha1.BlackboxTarget":        schema_pkg_apis_monitoring_v1alpha1_BlackboxTarget(ref),
+		"github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.ApplicationMonitoring": schema_pkg_apis_applicationmonitoring_v1alpha1_ApplicationMonitoring(ref),
+		"github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.BlackboxTarget":        schema_pkg_apis_applicationmonitoring_v1alpha1_BlackboxTarget(ref),
 	}
 }
 
-func schema_pkg_apis_monitoring_v1alpha1_ApplicationMonitoring(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_applicationmonitoring_v1alpha1_ApplicationMonitoring(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
@@ -44,23 +44,23 @@ func schema_pkg_apis_monitoring_v1alpha1_ApplicationMonitoring(ref common.Refere
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/monitoring/v1alpha1.ApplicationMonitoringSpec"),
+							Ref: ref("github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.ApplicationMonitoringSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/monitoring/v1alpha1.ApplicationMonitoringStatus"),
+							Ref: ref("github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.ApplicationMonitoringStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/monitoring/v1alpha1.ApplicationMonitoringSpec", "./pkg/apis/monitoring/v1alpha1.ApplicationMonitoringStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.ApplicationMonitoringSpec", "github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.ApplicationMonitoringStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
-func schema_pkg_apis_monitoring_v1alpha1_BlackboxTarget(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_applicationmonitoring_v1alpha1_BlackboxTarget(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
@@ -88,18 +88,18 @@ func schema_pkg_apis_monitoring_v1alpha1_BlackboxTarget(ref common.ReferenceCall
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/monitoring/v1alpha1.BlackboxTargetSpec"),
+							Ref: ref("github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.BlackboxTargetSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/monitoring/v1alpha1.BlackboxTargetStatus"),
+							Ref: ref("github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.BlackboxTargetStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/monitoring/v1alpha1.BlackboxTargetSpec", "./pkg/apis/monitoring/v1alpha1.BlackboxTargetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.BlackboxTargetSpec", "github.com/integr8ly/application-monitoring-operator/pkg/apis/applicationmonitoring/v1alpha1.BlackboxTargetStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
